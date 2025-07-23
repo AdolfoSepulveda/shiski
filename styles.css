@@ -30,9 +30,9 @@
   --bg-error_light: var(--error-50);
   --bg-error_pressed: var(--error-800);
   --bg-onbrand_default: var(--brand-base);
-  --bg-onbrand_hover: var(--brand-800);
+  --bg-onbrand_hover: var(--brand-600);
   --bg-onbrand_light: var(--brand-50);
-  --bg-onbrand_pressed: var(--brand-700);
+  --bg-onbrand_pressed: var(--brand-800);
   --bg-pressed: var(--gris-100);
   --bg-surface: var(--gris-50);
   --bordes-default: var(--gris-200);
@@ -63,9 +63,10 @@ body {
   font-family: 'Figtree', sans-serif;
   width: 100%;
   box-sizing: border-box;
-  max-width: 1980px;
+  max-width: 1600px;
   margin: 0 auto;
   margin-top: 60px; /* Desplaza el contenido hacia abajo para dejar espacio a la barra de navegación */
+  overflow-x: hidden; /* Evita el scroll horizontal */
 }
 
 h1,
@@ -78,6 +79,7 @@ h4 {
 p {
   margin: 0;
 }
+
 
 /* Botones base */
 .btn {
@@ -163,7 +165,6 @@ p {
   margin: 0 auto; /* Centra el menú */
   padding: 0;
   display: flex;
-  gap: var(--spacing-md);
 }
 
 .navbar-left {
@@ -191,7 +192,7 @@ p {
 
 
 .menu-item {
-  padding: var(--spacing-xs) var(--spacing-sm); /* Ajustado el padding para que el fondo se vea en todo el item */
+  padding: var(--spacing-sm) var(--spacing-sm); /* Ajustado el padding para que el fondo se vea en todo el item */
   font-size: var(--small);
   color: var(--texto-subtle);
   background-color: transparent;
@@ -204,11 +205,12 @@ p {
 
 .menu-item:hover {
   color: var(--texto-default);
-  background-color: var(--bg-onbrand_light);
+  background-color: var(--bg-body);
+  border-bottom: 2px solid var(--bordes-default);
 }
 
 .menu-item:active {
-  color: var(--texto-onbrand_default);
+  color: var(--texto-default);
   background-color: var(--bg-onbrand_light);
 }
 
@@ -220,6 +222,63 @@ p {
 
 .navbar-right .btn:first-child {
   margin-right: var(--spacing-md);
+}
+
+.hamburger-menu {
+  display: none;
+  cursor: pointer;
+}
+
+.hamburger-menu i {
+  font-size: 24px;
+  color: var(--texto-onbrand_default);
+}
+
+@media (max-width: 1080px) {
+  .menu-wrapper {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+  }
+
+  .menu-wrapper.active {
+    display: block;
+  }
+
+  .menu {
+    flex-direction: column;
+    width: 0;
+    max-width: 350px;
+    height: 100%;
+    background-color: var(--neutral-color-white);
+    padding: var(--spacing-xl);
+    box-sizing: border-box;
+    overflow-x: hidden;
+    transition: width 0.3s ease-in-out;
+  }
+
+  .menu-wrapper.active .menu {
+    width: 100%;
+  }
+
+  .navbar-right {
+    display: none;
+  }
+
+  .hamburger-menu {
+    display: block;
+  }
+
+  .navbar-left {
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 
 /* Clases de color de texto */
@@ -254,6 +313,10 @@ p {
   margin: 0;
 }
 
+.text-body.bold {
+  font-weight: 600;
+}
+
 .text-small {
   font-size: var(--small);
   margin: 0;
@@ -262,5 +325,168 @@ p {
 .text-extrasmall {
   font-size: var(--extrasmall);
   margin: 0;
+}
+
+/* Añadir al final del archivo */
+.cards-wrapper {
+  display: flex;
+  gap: var(--spacing-xl);
+  flex-wrap: wrap;
+  width: 100%;
+  box-sizing: border-box;
+  padding-left: var(--spacing-xl);
+  padding-right: var(--spacing-xl);
+  margin-top: var(--spacing-xl);
+}
+.card-container {
+  width: 100%;
+}
+
+.card-content {
+  background-color: var(--bg-body);
+  border-radius: var(--radius-sm);
+  padding: var(--spacing-4xl) var(--spacing-2xl);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: var(--spacing-xl);
+  flex: 1;
+  min-width: calc(33.33% - var(--spacing-xl));
+  box-sizing: border-box;
+}
+
+.card-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+  align-items: left;
+  flex: 1;
+  color: var(--texto-onbrand_default);
+  min-width: 0; /* Permite que el elemento se encoja */
+}
+
+.card-icon {
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+}
+
+.iconoir-report-columns::before {
+    width: 60px;
+    height: 60px;
+    display: block;
+}
+
+.card-icon::before {
+  content: ' ';
+  display: block;
+  background: currentColor;
+  mask-size: cover;
+  -webkit-mask-size: cover;
+  width: 1em;
+  height: 1em;
+}
+
+
+
+.card-text-container {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+/* Typography styles based on user's design specifications */
+
+.display-48 {
+  font-kerning: none;
+  font-feature-settings: 'calt' off;
+  font-family: Figtree;
+  font-size: var(--display-48);
+  font-style: normal;
+  font-weight: 700;
+  line-height: 57px; /* 118.75% */
+}
+
+.display-40 {
+  font-kerning: none;
+  font-feature-settings: 'calt' off;
+  font-family: Figtree;
+  font-size: var(--display-40);
+  font-style: normal;
+  font-weight: 700;
+  line-height: 48px; /* 120% */
+}
+
+h1 {
+  font-kerning: none;
+  font-feature-settings: 'calt' off;
+  font-family: Figtree;
+  font-size: var(--h1);
+  font-style: normal;
+  font-weight: 700;
+  line-height: 40px; /* 125% */
+}
+
+h2 {
+  font-kerning: none;
+  font-feature-settings: 'calt' off;
+  font-family: Figtree;
+  font-size: var(--h2);
+  font-style: normal;
+  font-weight: 600;
+  line-height: 32px; /* 114.286% */
+}
+
+h3 {
+  font-kerning: none;
+  font-feature-settings: 'calt' off;
+  font-family: Figtree;
+  font-size: var(--h3);
+  font-style: normal;
+  font-weight: 600;
+  line-height: 28px; /* 116.667% */
+}
+
+h4 {
+  font-kerning: none;
+  font-feature-settings: 'calt' off;
+  font-family: Figtree;
+  font-size: var(--h4);
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px; /* 120% */
+}
+
+.body {
+  font-kerning: none;
+  font-feature-settings: 'calt' off;
+  font-family: Figtree;
+  font-size: var(--body);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; /* 125% */
+}
+
+.bold {
+  font-weight: 600;
+}
+
+.small {
+  font-kerning: none;
+  font-feature-settings: 'calt' off;
+  font-family: Figtree;
+  font-size: var(--small);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px; /* 128.571% */
+}
+
+.extrasmall {
+  font-kerning: none;
+  font-family: Figtree;
+  font-size: var(--extrasmall);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px; /* 133.333% */
 }
 
