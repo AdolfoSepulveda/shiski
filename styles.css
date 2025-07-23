@@ -281,6 +281,16 @@ p {
   }
 }
 
+.content-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  padding-top: var(--spacing-7xl);
+  padding-bottom: var(--spacing-7xl);
+  padding-left: var(--spacing-5xl);
+  padding-right: var(--spacing-5xl);
+}
+
 /* Clases de color de texto */
 .text-default {
   color: var(--texto-default);
