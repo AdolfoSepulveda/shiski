@@ -1,6 +1,8 @@
 {
   "name": "tamara-project",
   "version": "1.0.0",
-  "scripts": {},
+  "scripts": {
+    "serve": "serve ."
+  },
   "devDependencies": {}
 }
