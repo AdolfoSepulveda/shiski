@@ -291,7 +291,7 @@ p {
   padding-right: var(--spacing-5xl);
 }
 
-.blog-section {
+.title-section {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-md); /* 12px gap */
