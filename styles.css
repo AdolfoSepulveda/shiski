@@ -360,6 +360,64 @@ p {
   }
 }
 
+.testimonials-cards {
+  display: flex;
+  flex-wrap: nowrap; /* Ensure cards stay in one row */
+  gap: var(--spacing-xl);
+  padding-right: var(--spacing-5xl);
+  padding-left: var(--spacing-5xl);
+  padding-bottom: var(--spacing-5xl);
+  overflow-x: auto; /* Add horizontal scroll if content overflows */
+}
+
+.testimonial-card {
+  flex: 1 1 calc(33.333% - (var(--spacing-xl) * 2 / 3)); /* Three cards per row, accounting for gap */
+  background-color: var(--bg-body);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+  align-items: center;
+}
+
+.testimonial-card .testimonial-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.testimonial-card .testimonial-text-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  align-items: center;
+}
+
+.testimonial-card .stars {
+  display: flex;
+  gap: var(--spacing-xs);
+}
+
+.testimonial-card .stars .iconoir-star {
+  width: 20px;
+  height: 20px;
+  fill: var(--color-brand);
+  color: var(--color-brand);
+}
+
+.testimonial-card .divider {
+  height: 1px;
+  width: 100%;
+  background-color: var(--bordes-default);
+}
+
+.testimonial-card p {
+  text-align: justify;
+  margin: 0;
+}
+
 @media (max-width: 480px) {
   .blog-card {
     flex: 1 1 100%; /* 1 card per row on very small screens */
@@ -400,6 +458,8 @@ p {
 .text-body {
   font-size: var(--body);
   margin: 0;
+  line-height: 1.5;
+  font-weight: 400;
 }
 
 .text-body.bold {
@@ -409,6 +469,7 @@ p {
 .text-small {
   font-size: var(--small);
   margin: 0;
+  line-height: 1.5;
 }
 
 .text-extrasmall {
@@ -495,7 +556,53 @@ background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100
   height: 1em;
 }
 
+.contact-section {
+  border-radius: var(--radius-md);
+  background: var(--bg-body);
+  padding: var(--spacing-4xl);
+  margin-left: var(--spacing-5xl);
+  margin-right: var(--spacing-5xl);
+  margin-bottom: var(--spacing-5xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2xl);
+  align-content: center;
+  align-items: center;
+}
 
+footer {
+  padding: var(--spacing-4xl) var(--spacing-5xl);
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-xl);
+}
+
+.footer-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--spacing-lg);
+}
+
+.footer-menu li a {
+  text-decoration: none;
+  color: var(--texto-default);
+  font-size: var(--small);
+}
+
+.copyright-text {
+  color: var(--texto-subtle);
+  font-size: var(--small);
+  margin-top: var(--spacing-md);
+}
 
 .card-text-container {
   display: flex;
