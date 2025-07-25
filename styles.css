@@ -88,7 +88,7 @@ p {
   justify-content: space-between;
   gap: var(--spacing-xs);
   flex-direction: row;
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-md);
   cursor: pointer;
   transition: background-color 0.2s, border-color 0.2s;
 }
@@ -291,6 +291,81 @@ p {
   padding-right: var(--spacing-5xl);
 }
 
+.blog-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md); /* 12px gap */
+  align-items: center;
+  padding-top: var(--spacing-5xl);
+  padding-left: var(--spacing-5xl);
+  padding-right: var(--spacing-5xl);
+  padding-bottom: var(--spacing-xl);
+}
+
+.blog-section h2 {
+  margin: 0;
+}
+
+.blog-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm); /* 12px gap */
+  padding-left: var(--spacing-5xl);
+  padding-right: var(--spacing-5xl);
+  margin-bottom: var(--spacing-5xl);
+}
+
+.blog-card {
+  flex: 1 1 calc(33.333% - (var(--spacing-md) * 2 / 3)); /* Three cards per row, accounting for gap */
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  height: 450px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.blog-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+}
+
+.blog-card .card-content {
+  position: relative;
+  z-index: 1;
+  padding: var(--spacing-2xl);
+}
+
+.blog-card .card-content h4 {
+  margin-top: var(--spacing-md);
+  margin-bottom: 0;
+  color: white;
+}
+
+.pill-text.onColor {
+  border: 1px solid white;
+  color: white;
+  background-color: transparent;
+}
+
+@media (max-width: 768px) {
+  .blog-card {
+    flex: 1 1 100%; /* 1 card per row on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .blog-card {
+    flex: 1 1 100%; /* 1 card per row on very small screens */
+  }
+}
+
 /* Clases de color de texto */
 .text-default {
   color: var(--texto-default);
@@ -301,6 +376,10 @@ p {
 /* Clases de color de texto */
 .text-brand {
   color: var(--texto-onbrand_default);
+}
+
+.text-oncolor {
+  color: var(--texto-oncolor);
 }
 
 /* Clases de contenedor */
@@ -354,7 +433,7 @@ p {
 
 .card-content {
   background-color: var(--bg-body);
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-md);
   padding: var(--spacing-4xl) var(--spacing-2xl);
   display: flex;
   flex-direction: row;
@@ -379,6 +458,25 @@ p {
   display: inline-block;
   width: 60px;
   height: 60px;
+}
+
+.blog-card-content {
+  display: flex;
+height: 100%;
+padding: var(--spacing-2xl, 32px);
+flex-direction: column;
+justify-content: flex-end;
+align-items: flex-start;
+gap: var(--spacing-sm, 12px);
+background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);;
+}
+
+.truncado {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
 
 .iconoir-report-columns::before {
