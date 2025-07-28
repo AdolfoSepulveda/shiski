@@ -1,0 +1,196 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalles del Curso</title>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="primitivos.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/iconoir-icons/iconoir@main/css/iconoir.css" />
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar-left">
+      <div class="logo-placeholder">Logo</div>
+      <div class="hamburger-menu">
+        <i class="iconoir-menu-scale card-icon"></i>
+      </div>
+    </div>
+    <div class="menu-wrapper">
+      <ul class="menu">
+          <li><a href="#" class="menu-item active">Inicio</a></li>
+          <li><a href="#" class="menu-item">Nosotros</a></li>
+          <li><a href="#" class="menu-item">Para Empresas</a></li>
+          <li><a href="#" class="menu-item">Precios</a></li>
+          <li><a href="#" class="menu-item">Blog</a></li>
+          <li><a href="#" class="menu-item">Contáctanos</a></li>
+      </ul>
+    </div>
+    <div class="navbar-right">
+      <button class="btn btn-secondary btn-md">Crear cuenta</button>
+      <button class="btn btn-primary btn-md">Iniciar sesión <i class="iconoir-arrow-right"></i></button>
+    </div>
+  </nav>
+
+  <div class="course-header-container" style="display: flex; flex-wrap: wrap; gap: var(--spacing-2xl); padding: var(--spacing-5xl);">
+    <div class="column" style="flex: 1;">
+      <!-- Contenido de la primera columna del header del curso -->
+      <div style="display: flex; flex-direction: column; align-items: flex-start; gap: var(--spacing-2xl);">
+        <button class="btn btn-secondary btn-md" onclick="history.back()">Volver <i class="iconoir-arrow-left"></i></button>
+        <div style="display: flex; flex-direction: column; gap: var(--spacing-xxs);">
+          <h1>Gestión de Inventarios</h1>
+          <p class="body text-default">Domina las técnicas esenciales para optimizar tus niveles de inventario, reducir costos y mejorar la eficiencia de tu cadena de suministro.</p>
+        </div>
+      <div class="divider"></div>
+        <p class="small text-subtle" style="text-align: justify;">Aprende a dominar las técnicas clave que te permitirán optimizar la gestión de inventario de forma estratégica. Conoce cómo aplicar mejores prácticas para mantener niveles óptimos de stock, reducir el exceso y evitar quiebres que afectan la operación. Al implementar estos conocimientos, lograrás disminuir costos innecesarios asociados al almacenamiento y mejorar el flujo de productos a lo largo de toda la cadena de suministro. Esta optimización no solo incrementa la eficiencia operativa, sino que también mejora la capacidad de respuesta ante la demanda. Da un paso hacia una logística más ágil, rentable y alineada con los objetivos de tu negocio.</p>
+      </div>
+    </div>
+    <div class="column" style="width: 366px;">
+      <!-- Contenido de la segunda columna del header del curso -->
+        <div class="card testimonial-card spacing-2xl">
+          <div class=" gap-md">
+            <div class="flex gap-xs items-start">
+              <h2 class="h2">UF3</h2>
+              <p class="body-default text-subtle">UF10</p>
+            </div>
+            <p class="text-small text-subtle">10% de descuento</p>
+          </div>
+          <div class="flex flex-col gap-xs w-full">
+            <button class="btn btn-primary btn-lg w-full">
+              Cotiza <i class="iconoir-arrow-right"></i>
+            </button>
+            <button class="btn btn-secondary btn-md w-full">
+              Probar gratis
+            </button>
+          </div>
+          <div class="divider"></div>
+          <div class="flex flex-col gap-md w-full">
+            <p class="body-default bold">El curso contiene:</p>
+            <div class="flex flex-col gap-sm w-full">
+            <div class="list-item-with-icon">
+              <i class="iconoir-security-pass"></i>
+              <p class="text-small text-subtle">Acceso de por vida a los materiales</p>
+            </div>
+            <div class="list-item-with-icon">
+              <i class="iconoir-security-pass"></i>
+              <p class="text-small text-subtle">Lecciones interactivas en video</p>
+            </div>
+            <div class="list-item-with-icon">
+              <i class="iconoir-security-pass"></i>
+              <p class="text-small text-subtle">Materiales y plantilla descargables</p>
+            </div>
+            <div class="list-item-with-icon">
+              <i class="iconoir-security-pass"></i>
+              <p class="text-small text-subtle">CaseStudies reales</p>
+            </div>
+            <div class="list-item-with-icon">
+              <i class="iconoir-security-pass"></i>
+              <p class="text-small text-subtle">Certificado</p>
+            </div>
+            <div class="list-item-with-icon">
+              <i class="iconoir-security-pass"></i>
+              <p class="text-small text-subtle">Soporte 24/4</p>
+            </div>
+            <div class="list-item-with-icon">
+              <i class="iconoir-security-pass"></i>
+              <p class="text-small text-subtle">Acceso a la app</p>
+            </div>
+            <div class="list-item-with-icon">
+              <i class="iconoir-security-pass"></i>
+              <p class="text-small text-subtle">Acceso a foro de la comunidad</p>
+            </div>
+          </div>
+        </div>
+        </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const hamburgerMenu = document.querySelector('.hamburger-menu');
+      const menuWrapper = document.querySelector('.menu-wrapper');
+
+      hamburgerMenu.addEventListener('click', function() {
+        menuWrapper.classList.toggle('active');
+      });
+    });
+  </script>
+  <section class="tabs-section">
+    <div class="tabs-container">
+      <div class="tab active" data-tab-content="resumen">Resumen</div>
+      <div class="tab" data-tab-content="temario">Temario</div>
+      <div class="tab" data-tab-content="instructor">Instructor</div>
+      <div class="tab" data-tab-content="testimonios">Testimonios</div>
+    </div>
+    <div class="tab-content-container">
+      <div id="resumen" class="tab-pane active flex flex-col gap-xxs">
+        <!-- Content for Resumen tab -->
+        <h4>Objetivos del Curso</h4>
+        <p class="small text-subtle">Al finalizar este curso, los participantes serán capaces de:</p>
+        <div class="flex gap-2xl">
+          <ul class="flex gap-md w-50">
+            <li class="list-item-with-icon"><i class="iconoir-security-pass"></i> <p class="small text-subtle">Dominar las técnicas clave para optimizar la gestión de inventario de forma estratégica.</p></li>
+            <li class="list-item-with-icon"><i class="iconoir-security-pass"></i> <p class="small text-subtle">Aplicar mejores prácticas para mantener niveles óptimos de stock, reducir el exceso y evitar quiebres que afectan la operación.</p></li>
+            <li class="list-item-with-icon"><i class="iconoir-security-pass"></i> <p class="small text-subtle">Implementar conocimientos para disminuir costos innecesarios asociados al almacenamiento y mejorar el flujo de productos a lo largo de toda la cadena de suministro.</p></li>
+            <li class="list-item-with-icon"><i class="iconoir-security-pass"></i> <p class="small text-subtle">Calcular y optimizar los puntos de reorden y los niveles de stock de seguridad.</p></li>
+            <li class="list-item-with-icon"><i class="iconoir-security-pass"></i> <p class="small text-subtle">Utilizar sistemas de gestión de inventarios (WMS) para mejorar la visibilidad y el control.</p></li>
+            <li class="list-item-with-icon"><i class="iconoir-security-pass"></i> <p class="small text-subtle">Evaluar el desempeño de la gestión de inventarios mediante indicadores clave (KPIs).</p></li>
+          </ul>
+          <ul class="flex gap-md w-50">
+            <li class="list-item-with-icon"><i class="iconoir-security-pass"></i> <p class="small text-subtle">Identificar las causas comunes de ineficiencias en el manejo de inventarios y cómo prevenirlas.</p></li>
+            <li class="list-item-with-icon"><i class="iconoir-security-pass"></i> <p class="small text-subtle">Diseñar estrategias de reposición ajustadas a distintos tipos de productos y demanda.</p></li>
+            <li class="list-item-with-icon"><i class="iconoir-security-pass"></i> <p class="small text-subtle">Integrar prácticas de inventario justo a tiempo (JIT) para reducir costos y desperdicios.</p></li>
+            <li class="list-item-with-icon"><i class="iconoir-security-pass"></i> <p class="small text-subtle">Analizar el impacto financiero de las decisiones relacionadas con el inventario.</p></li>
+            <li class="list-item-with-icon"><i class="iconoir-security-pass"></i> <p class="small text-subtle">Coordinar la gestión de inventarios con otras áreas clave como compras y logística.</p></li>
+            <li class="list-item-with-icon"><i class="iconoir-security-pass"></i> <p class="small text-subtle">Aplicar tecnologías emergentes (como RFID o IoT) para automatizar y mejorar la gestión de inventarios.</p></li>
+          </ul>
+        </div>
+      </div>
+      <div id="temario" class="tab-pane">
+        <!-- Content for Temario tab -->
+        <h4>Temas del curso</h4>
+        <p class="small text-subtle">6 módulos • 12 clases</p>
+      </div>
+      <div id="instructor" class="tab-pane">
+        <!-- Content for Instructor tab -->
+        <p>Contenido del Instructor...</p>
+      </div>
+      <div id="testimonios" class="tab-pane">
+        <!-- Content for Testimonios tab -->
+        <p>Contenido de Testimonios...</p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const tabs = document.querySelectorAll('.tab');
+      const tabPanes = document.querySelectorAll('.tab-pane');
+
+      tabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+          tabs.forEach(t => t.classList.remove('active'));
+          this.classList.add('active');
+
+          tabPanes.forEach(pane => pane.classList.remove('active'));
+          const targetTabContentId = this.dataset.tabContent;
+          document.getElementById(targetTabContentId).classList.add('active');
+        });
+      });
+    });
+  </script>
+  <footer>
+    <div class="footer-content">
+      <ul class="footer-menu">
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#">Nosotros</a></li>
+        <li><a href="#">Para Empresas</a></li>
+        <li><a href="#">Precios</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Contáctanos</a></li>
+      </ul>
+      <p class="copyright-text">®2025 Shisky. Todos los derechos reservados</p>
+    </div>
+  </footer>
+</body>
+</html>
